@@ -11,7 +11,7 @@ metadata:
   title:
     default: Green 18
     template: 'Green 18 | %s'
-  description: "Ein kleines, aber feines Restaurant direkt am Penzinger See bei Wasserburg"
+  description: 'Ein kleines, aber feines Restaurant direkt am Penzinger See bei Wasserburg'
   robots:
     index: true
     follow: true

@@ -1,8 +1,8 @@
 ---
-title: 'Datenschutzbestimmungen'
+title: 'Impressum'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
 _Letztes Update_: 23. Oktober 2024
 
-## Hier kommt der ganze Datenschutz-Schmuh rein
+## Hier kommt der ganze offizielle Schmuh rein

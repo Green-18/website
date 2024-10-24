@@ -10,6 +10,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '../utils/permalinks';
 
 const metadata = {
   title: 'Green 18 am Penzinger See',
@@ -24,28 +25,20 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Jetzt reservieren',
+        href: getPermalink('/reservation'),
+        icon: 'tabler:tools-kitchen-2',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Über uns', href: getPermalink('/about') },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/ddb12c_f3bfba9fcd51474dbc44ef5fe7c8b0eb~mv2.jpg', alt: 'Green 18 Hero Image' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
+      Herzlich willkommen im <span class="text-accent">Green 18</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+      Direkt am Penzinger See bei Wasserburg. Gemütliches Ambiente, freundlicher Service und immer <span class="font-semibold">lecker</span>!
     </Fragment>
   </Hero>
 

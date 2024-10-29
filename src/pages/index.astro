@@ -4,6 +4,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Content from '~/components/widgets/Content.astro';
 import Button from '~/components/ui/Button.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getPermalink } from '../utils/permalinks';
 
 const metadata = {
@@ -84,4 +85,24 @@ const resmioContent = `<div id="resmio-green-18"></div>
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Hero>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Jetzt bestellen',
+        href: 'https://mylightspeed.app/giftcard/73d87e4f-0b73-4bd8-a34c-8fe70f125fda/menu',
+        target: '_blank',
+        icon: 'tabler:gift',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="sm:whitespace-nowrap">Geschenkgutschein gefällig?</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Überraschen Sie Ihre Lieben mit einem Geschenkgutschein für das <span class="text-accent">Green 18</span>!
+    </Fragment>
+  </CallToAction>
 </Layout>

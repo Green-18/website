@@ -17,7 +17,7 @@ export const headerData = {
 export const footerData = {
   secondaryLinks: [
     { text: 'Impressum', href: getPermalink('/imprint') },
-    { text: 'Datenschutz', href: getPermalink('/privacy') },
+    // { text: 'Datenschutz', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     // { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
@@ -29,5 +29,5 @@ export const footerData = {
     },
     // { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
   ],
-  footNote: `<a class="underline dark:text-muted" href="https://github.com/onwidget/astrowind" target="_blank">Astrowind</a> tweaked with 🖤 by <a class="underline dark:text-muted" href="https://github.com/defaude" target="_blank">defaude</a>`,
+  footNote: `<a class="dark:text-muted" href="https://github.com/onwidget/astrowind" target="_blank">Astrowind</a> tweaked with 🖤 by <a class="dark:text-muted" href="https://github.com/defaude" target="_blank">defaude</a>`,
 };

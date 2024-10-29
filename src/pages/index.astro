@@ -10,6 +10,15 @@ const metadata = {
   title: 'Green 18 am Penzinger See',
   ignoreTitleTemplate: true,
 };
+
+const resmioContent = `<div id="resmio-green-18"></div>
+<script>(function(d, s) {
+    var js, rjs = d.getElementsByTagName(s)[0];
+    js = d.createElement(s);
+    js.src = "//static.resmio.com/static/de/widget.js#id=green-18&id=green-18&color=%23555555&style=&width=100%&height=523&fontSize=16px&showLogo=false&borderRadius=10&facebookLogin=true&backgroundColor=%23ffffff&disableBranding=false&commentsDisabled=false&newsletterSignup=false&linkBackgroundColor=%23417505";
+    rjs.parentNode.insertBefore(js, rjs);
+}(document, "script"));
+</script>`;
 ---
 
 <Layout metadata={metadata}>
@@ -18,7 +27,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Jetzt reservieren',
-        href: getPermalink('/reservation'),
+        href: getPermalink('/#reservation'),
         icon: 'tabler:tools-kitchen-2',
       },
       { text: 'Über uns', href: getPermalink('/about') },
@@ -37,13 +46,11 @@ const metadata = {
 
   <Note />
 
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
     tagline="Das Seehäusl"
     title="So kommen Sie zu uns"
-    image={'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10664.748080495312!2d12.2381364!3d48.0680329!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4775fd50c68a8ffb%3A0x82606d71d5305907!2sSeestra%C3%9Fe%204%2C%2083547%20Babensham!5e0!3m2!1sen!2sde!4v1729803295881!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'}
+    image={'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10664.748080495312!2d12.2381364!3d48.0680329!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4775fd50c68a8ffb%3A0x82606d71d5305907!2sSeestra%C3%9Fe%204%2C%2083547%20Babensham!5e0!3m2!1sen!2sde!4v1729803295881!5m2!1sen!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'}
   >
     <Fragment slot="content">
       <div class="space-y-10">
@@ -70,4 +77,11 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
+
+  <Hero id="reservation" image={resmioContent}>
+    <Fragment slot="title"> Jetzt reservieren </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Hero>
 </Layout>

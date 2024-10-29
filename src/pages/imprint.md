@@ -3,6 +3,15 @@ title: 'Impressum'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Letztes Update_: 23. Oktober 2024
+_Letztes Update_: 29. Oktober 2024
 
-## Hier kommt der ganze offizielle Schmuh rein
+## NEAGU & GANGKOFER GbR
+
+<address>
+  Im Seehaus<br />
+  Seestr. 4<br />
+  83547 Wasserburg / Penzing<br />
+  <br />
+  Telefon: <a href="tel:+4980719043090">08071 9043090</a><br />
+  E-Mail: <a href="mailto:green18.restaurant@web.de">green18.restaurant@web.de</a>
+</address>

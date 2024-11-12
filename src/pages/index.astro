@@ -12,7 +12,7 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
-const resmioContent = `<div id="resmio-green-18"></div>
+const resmioContent = `<div id="resmio-green-18" class="shadow-xl"></div>
 <script>(function(d, s) {
     var js, rjs = d.getElementsByTagName(s)[0];
     js = d.createElement(s);
@@ -51,12 +51,12 @@ const resmioContent = `<div id="resmio-green-18"></div>
     isReversed
     tagline="Das Seehäusl"
     title="So kommen Sie zu uns"
-    image={'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10664.748080495312!2d12.2381364!3d48.0680329!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4775fd50c68a8ffb%3A0x82606d71d5305907!2sSeestra%C3%9Fe%204%2C%2083547%20Babensham!5e0!3m2!1sen!2sde!4v1729803295881!5m2!1sen!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'}
+    image={'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10664.748080495312!2d12.2381364!3d48.0680329!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4775fd50c68a8ffb%3A0x82606d71d5305907!2sSeestra%C3%9Fe%204%2C%2083547%20Babensham!5e0!3m2!1sen!2sde!4v1729803295881!5m2!1sen!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="shadow-xl"></iframe>'}
   >
     <Fragment slot="content">
       <div class="space-y-10">
         <div>
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Adresse</h3>
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Adresse</h3>
           <p>
             <Button href="https://maps.app.goo.gl/izfMhb4aTZvQMP2S8" target="_blank" variant="link" icon="tabler:map-2"
               >Seestraße 4, 83547 Penzing bei Wasserburg
@@ -64,7 +64,7 @@ const resmioContent = `<div id="resmio-green-18"></div>
           </p>
         </div>
         <div>
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Öffnungszeiten</h3>
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Öffnungszeiten</h3>
           <div class="mb-2">Montag Ruhetag</div>
           <div>Dienstag bis Sonntag</div>
           <div class="font-semibold">09:00 - 14:00 Uhr</div>
@@ -73,17 +73,10 @@ const resmioContent = `<div id="resmio-green-18"></div>
         </div>
       </div>
     </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
   </Content>
 
   <Hero id="reservation" image={resmioContent}>
-    <Fragment slot="title"> Jetzt reservieren </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+    <Fragment slot="title">Jetzt reservieren</Fragment>
   </Hero>
 
   <CallToAction

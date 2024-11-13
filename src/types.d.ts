@@ -284,3 +284,15 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+
+export type Meal = {
+  name: string;
+  ingredients?: string[];
+  remark?: string;
+};
+
+export type MealCategory = {
+  title: string;
+  subtitle?: string;
+  meals: Meal[];
+};

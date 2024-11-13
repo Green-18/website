@@ -1,11 +1,30 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-const metadata = {
-  title: 'Speisekarte',
-};
+import MealCategoryBlock from '../components/MealCategoryBlock.astro';
+import WidgetWrapper from '../components/ui/WidgetWrapper.astro';
+import Headline from '../components/ui/Headline.astro';
+import { categories } from '../menu/categories';
 ---
 
-<Layout metadata={metadata}>
-  <h1>Hier kommt die Speisekarte hin</h1>
+<Layout metadata={{ title: 'Speisekarte' }}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto pb-0 md:pb-2 lg:pb-4">
+    <Headline
+      title="Unsere Speisekarte"
+      classes={{
+        container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+        title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
+        subtitle: 'max-w-3xl mx-auto sm:text-center text-xl',
+      }}
+    >
+      <Fragment slot="subtitle">
+        Alle Gerichte sind auch <span class="text-accent">als Lieferung</span> oder <span class="text-accent"
+          >zur Abholung</span
+        > erhältlich
+      </Fragment>
+    </Headline>
+  </WidgetWrapper>
+
+  <div class="columns-1 lg:columns-2 xl:columns-3">
+    {categories.map((category) => <MealCategoryBlock {...category} />)}
+  </div>
 </Layout>

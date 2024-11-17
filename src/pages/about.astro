@@ -10,7 +10,6 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Steps
-    title="Lernen Sie das Green 18 kennen"
     items={[
       {
         title: 'Wer?',
@@ -39,7 +38,11 @@ const metadata = {
       src: '~/assets/images/CuF.webp',
       alt: 'Carina und Florin',
     }}
-  />
+  >
+    <Fragment slot="title">
+      Lernen Sie das <span class="text-accent">Green 18</span> kennen
+    </Fragment>
+  </Steps>
 
   <Features2
     title="Kontakt"

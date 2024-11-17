@@ -1,0 +1,11 @@
+---
+import type { DietaryLabelKey } from '../types';
+
+export interface Props {
+  labels: DietaryLabelKey[];
+}
+
+const { labels } = Astro.props;
+---
+
+<sup><a href="#dietary-labels" class="text-muted">${labels.join(', ')}</a></sup>

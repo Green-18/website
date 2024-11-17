@@ -1,17 +1,22 @@
 ---
+import { toIngredientString } from '~/utils/utils';
+import type { DietaryLabelKey, Ingredient } from '../types';
+import { dietaryLabelsLink } from '../utils/utils';
+
 export interface Props {
   name: string;
-  ingredients?: string[];
+  ingredients?: Ingredient[];
   remark?: string;
+  dietaryLabels?: DietaryLabelKey[];
 }
 
-const { name, ingredients = [], remark } = Astro.props;
+const { name, ingredients = [], remark, dietaryLabels } = Astro.props;
 
-const ingredientsString = ingredients.join(' | ');
+const ingredientsString = ingredients.map(toIngredientString).join(' | ');
 ---
 
 <div class="flex flex-col gap-0.5">
-  <div class="font-semibold text-lg">{name}</div>
-  {ingredientsString && <div class="text-base">{ingredientsString}</div>}
+  <div class="font-semibold text-lg" set:html={`${name} ${dietaryLabels ? dietaryLabelsLink(dietaryLabels) : ''}`} />
+  {ingredientsString && <div class="text-base" set:html={ingredientsString} />}
   {remark && <div class="text-sm">{remark}</div>}
 </div>

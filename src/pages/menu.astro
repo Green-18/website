@@ -3,7 +3,10 @@ import Layout from '~/layouts/PageLayout.astro';
 import MealCategoryBlock from '../components/MealCategoryBlock.astro';
 import WidgetWrapper from '../components/ui/WidgetWrapper.astro';
 import Headline from '../components/ui/Headline.astro';
-import { categories } from '../menu/categories';
+import { breakfast } from '../menu/breakfast';
+import { allDay } from '../menu/allDay';
+
+import { DIETARY_LABELS } from '../dietaryLabels';
 ---
 
 <Layout metadata={{ title: 'Speisekarte' }}>
@@ -24,7 +27,39 @@ import { categories } from '../menu/categories';
     </Headline>
   </WidgetWrapper>
 
+  <WidgetWrapper containerClass="max-w-7xl mx-auto pb-0 md:pb-2 lg:pb-4">
+    <Headline
+      title="Frühstück"
+      tagline="bis 12:00 Uhr"
+      classes={{ container: 'max-w-xl sm:mx-auto lg:max-w-2xl', title: 'font-bold tracking-tighter mb-4 font-heading' }}
+    />
+  </WidgetWrapper>
+
   <div class="columns-1 lg:columns-2 xl:columns-3">
-    {categories.map((category) => <MealCategoryBlock {...category} />)}
+    {breakfast.map((category) => <MealCategoryBlock {...category} />)}
   </div>
+
+  <WidgetWrapper containerClass="max-w-7xl mx-auto pb-0 md:pb-2 lg:pb-4">
+    <Headline
+      title="Speisen"
+      tagline="ganztags"
+      classes={{ container: 'max-w-xl sm:mx-auto lg:max-w-2xl', title: 'font-bold tracking-tighter mb-4 font-heading' }}
+    />
+  </WidgetWrapper>
+
+  <div class="columns-1 lg:columns-2 xl:columns-3">
+    {allDay.map((category) => <MealCategoryBlock {...category} />)}
+  </div>
+
+  <WidgetWrapper containerClass="max-w-7xl mx-auto pb-0 md:pb-2 lg:pb-4" id="dietary-labels">
+    <ul class="text-sm columns-1 sm:columns-2 md:columns-4">
+      {
+        Object.keys(DIETARY_LABELS).map((key) => (
+          <li>
+            {key} - {DIETARY_LABELS[key]}
+          </li>
+        ))
+      }
+    </ul>
+  </WidgetWrapper>
 </Layout>

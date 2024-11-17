@@ -1,5 +1,6 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
+import { DIETARY_LABELS } from '~/dietaryLabels.ts';
 
 export interface Post {
   /** A unique ID number that identifies a post. */
@@ -285,14 +286,19 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
 
+export type Ingredient = string | { name: string; dietaryLabels: DietaryLabelKey[] };
+
 export type Meal = {
   name: string;
-  ingredients?: string[];
+  ingredients?: Ingredient[];
   remark?: string;
+  dietaryLabels?: DietaryLabelKey[];
 };
 
 export type MealCategory = {
-  title: string;
+  title?: string;
   subtitle?: string;
   meals: Meal[];
 };
+
+export type DietaryLabelKey = keyof typeof DIETARY_LABELS;

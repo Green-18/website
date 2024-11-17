@@ -1,4 +1,5 @@
 import { I18N } from 'astrowind:config';
+import type { DietaryLabelKey, Ingredient } from '~/types';
 
 export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.language, {
   year: 'numeric',
@@ -50,3 +51,19 @@ export const toUiAmount = (amount: number) => {
 
   return value;
 };
+
+export function dietaryLabelsLink(dietaryLabels: DietaryLabelKey[]): string {
+  return `<sup><a href="#dietary-labels" class="text-muted font-bold">${dietaryLabels.join(', ')}</a></sup>`;
+}
+
+export function isStringIngredient(ingredient: Ingredient): ingredient is string {
+  return typeof ingredient === 'string';
+}
+
+export function toIngredientString(ingredient: Ingredient): string {
+  if (isStringIngredient(ingredient)) {
+    return ingredient;
+  } else {
+    return ingredient.name + ' ' + dietaryLabelsLink(ingredient.dietaryLabels);
+  }
+}

@@ -4,7 +4,7 @@ import MealRow from './MealRow.astro';
 import Content from './widgets/Content.astro';
 
 export interface Props {
-  title: string;
+  title?: string;
   subtitle?: string;
   meals: Meal[];
 }
@@ -21,7 +21,7 @@ const { title, subtitle, meals } = Astro.props;
     title: 'text-2xl md:text-3xl mb-2',
     subtitle: 'text-lg',
     headlineContainer: 'mb-4 md:mb-6',
-    content: 'mb-8',
+    content: 'mb-6',
   }}
 >
   <Fragment slot="content">
